@@ -6,14 +6,14 @@ import java.io.Reader;
 
 public class Parser {
     public PrinterDefinition printerDefinition;
-    public CuraObject curaObject;
+    public Overrides overrides;
 
     public Parser(String filePath) {
         Gson gson = new Gson();
         try {
             Reader reader = new FileReader(filePath);
             this.printerDefinition = gson.fromJson(reader, PrinterDefinition.class);
-            this.curaObject = new CuraObject(printerDefinition.overrides);
+            this.overrides = new Overrides(printerDefinition.overrides);
         } catch (IOException e) {
             e.printStackTrace();
         }

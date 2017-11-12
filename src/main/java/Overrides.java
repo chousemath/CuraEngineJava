@@ -1,7 +1,7 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-public class CuraObject {
+public class Overrides {
     public String machine_name;
     public String machine_shape;
     public String machine_gcode_flavor;
@@ -25,7 +25,7 @@ public class CuraObject {
     public float retraction_amount;
     public float gantry_height;
 
-    public CuraObject(JsonObject overrides) {
+    public Overrides(JsonObject overrides) {
         this.machine_name = getString(overrides.get("machine_name"));
         this.machine_shape = getString(overrides.get("machine_shape"));
         this.machine_gcode_flavor = getString(overrides.get("machine_gcode_flavor"));
